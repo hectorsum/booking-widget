@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+:root{
+  --main-color: #2385C2;
+  --hover-main-color: #103e5ab9;
+  --secondary-color:#6A6C78;
+
+}
+.b-widget-v *{
+  font-family: "DM Sans", sans-serif;
+}
+.b-widget-v{
+  background: #FFFFFF;
+  max-width:760px;
+  margin: 0 auto;
+  box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.b-widget-v .tabs-widget-v{
+  display:flex;
+  padding:0;
+  margin:0;
+}
+.b-widget-v .tabs-widget-v li{
+  list-style: none;
+  width: 50%;
+  text-align: center;
+  border-top: 4px solid var(--secondary-color);
+  border-radius: 5px 5px 0 0;
+}
+.b-widget-v .tabs-widget-v a{
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 2rem;
+  color:var(--secondary-color);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.b-widget-v .active-tab-v{
+  border:none !important;
+  border-top: 4px solid var(--main-color) !important;
+  border-radius: 5px 5px 0 0;
+}
+.b-widget-v .active-tab-v a {
+  color:var(--main-color) !important;
+}
+
+
+/*  Body Widget  */
+.body-b-widget-v{
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+
+/* Select Fields */
+
+.b-widget-v select {
+  outline: none;
+}
+
+.b-widget-v .selectdiv {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  /*Don't really need this just for demo styling*/  
+  /* float: left;
+  min-width: 200px;
+  margin: 50px 33%; */
+}
+
+.b-widget-v .selectdiv label {
+  width:100%;
+}
+
+.b-widget-v select::-ms-expand {
+  display: none;
+}
+
+.b-widget-v .selectdiv:after {
+  content: '<>';
+  /* font: 17px "Consolas", monospace; */
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 11px;
+  /*Adjust for position however you want*/
+  top: 7px;
+  padding: 0 0 2px;
+  border-bottom: 2px solid var(--secondary-color);
+  /*left line */
+  position: absolute;
+  pointer-events: none;
+}
+
+.b-widget-v .selectdiv select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add some styling */
+  display: block;
+  width: 100%;
+  /* max-width: 320px; */
+  height: 50px;
+  float: right;
+  /* margin: 5px 0px; */
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--secondary-color);
+  background-color: #ffffff;
+  background-image: none;
+  /* border: 1px solid #cccccc; */
+  border:none;
+  -ms-word-break: normal;
+  word-break: normal;
+  font-weight: bold;
+  cursor:pointer;
+}
+
+/* Field Icon */
+.b-widget-v .field-icon{
+  display: flex;
+  width: 50px;
+  border-right:none;
+  justify-content: center;
+  align-items: center;
+  color:var(--secondary-color);
+  font-size: 1.7rem;
+}
+
+.b-widget-v .dropdown-wrapper{
+  display:flex; 
+  align-items: center;
+  padding-right: 0;
+  /* flex-direction:column; */
+}
+.b-widget-v .dropdown__field{
+  display:flex; 
+  flex-direction:row;
+  /* width: 100%; */
+  border: 3px solid var(--secondary-color);
+  width: auto;
+  border-radius: 5px;
+}
+.b-widget-v .wrapper-child-adult .dropdown__field:first-child{
+  margin-right: 0.5rem;
+}
+
+.wrapper-child-adult{
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+.dropdown__field{
+  margin-bottom: 0.5rem;
+}
+.wrapper-child-adult .dropdown__field{
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.b-widget-v .post {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  /* max-width: 400px; */
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* padding: 1rem 1rem; */
+  /* box-shadow: inset 0 0 0 2px var(--brand-color-bg), inset -4px -4px 0 2px #CCC; */
+  background-color: var(--main-color);
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  border:none;
+  font-size: 0.7rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+.b-widget-v .post:hover{
+  background: var(--hover-main-color);
+}
+
+.datepicker-check-in-out{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display:flex;
+  align-items: center;
+}
+
+.b-widget-v #check-in-out{
+  width: -webkit-fill-available;
+  cursor: pointer;
+  padding: 0px 20px;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+@media (max-width: 480px){
+  .wrapper-child-adult{
+    flex-direction: column;
+  }
+  .b-widget-v .wrapper-child-adult .dropdown__field:first-child{
+    margin-right: 0;
+  }
+  .wrapper-child-adult{
+    margin: 0;
+  }
+  .wrapper-child-adult .dropdown__field{
+    margin-bottom: 0.5rem;
+    width: auto;
+  }
+  .litepicker .container__months.columns-2{
+    display: flex;
+    flex-direction: column;
+    width: fit-content !important;
+  }
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Widget</title>
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+  <button>Show Widget</button>
+  <div class="b-widget-v" id="changedates">
+    <ul class="tabs-widget-v">
+      <li class="active-tab-v">
+        <a href="javascript:void(0)" onclick="changeTab('air')" id="tabair">Hotel + Air</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" onclick="changeTab('hotel')" id="tabhotel">Hotel Only</a>
+      </li>
+    </ul>
+    <div class="body-b-widget-v">
+      <form action="loudon.php" name="newdates" style="margin:0;padding:0">
+        <input type="hidden" value="LOUD" name="hotel">
+        <input type="hidden" value="1" name="rooms">
+        <input type="hidden" value="AUA" name="airportTo">
+        <div class="dropdown__field">
+          <div class="field-icon">
+            <i class="fas fa-globe-americas"></i>
+          </div>
+          <div class="selectdiv">
+            <label>
+              <select id="countries" onChange="javascript:getAirports();">
+                <option selected>Departing Country</option>
+                <option value="CA">Canada</option>
+                <option value="US">United States</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="dropdown__field">
+          <div class="field-icon">
+            <i class="fas fa-plane-departure"></i>
+          </div>
+          <div class="selectdiv">
+            <label>
+              <select name="aiport" id="aiport">
+                <option selected>Departing Airport</option>
+                <option value=CAK>Akron/Canton Ohio Reg. (CAK)</option>
+                <option value=ALB>Albany, Ny (ALB)</option>
+                <option value=ABQ>Albuquerque, Nm (ABQ)</option>
+                <option value=ABE>Allentown, Pa (ABE)</option>
+                <option value=AMA>Amarillo, Tx (AMA)</option>
+                <option value=ANC>Anchorage, Ak (ANC)</option>
+                <option value=ACV>Arcata, Ca (ACV)</option>
+                <option value=AVL>Asheville, Nc (AVL)</option>
+                <option value=ASE>Aspen, Co (ASE)</option>
+                <option value=ATL>Atlanta, Ga (ATL)</option>
+                <option value=ACY>Atlantic City, Nj (ACY)</option>
+                <option value=AUS>Austin, Tx (AUS)</option>
+                <option value=BWI>Baltimore, Md (BWI)</option>
+                <option value=BGR>Bangor, Me (BGR)</option>
+                <option value=BTR>Baton Rouge, La (BTR)</option>
+                <option value=BPT>Beaumont, Tx (BPT)</option>
+                <option value=BET>Bethel, Ak (BET)</option>
+                <option value=BIL>Billings, Mt (BIL)</option>
+                <option value=BGM>Binghamton, Ny (BGM)</option>
+                <option value=BHM>Birmingham, Al (BHM)</option>
+                <option value=BIS>Bismarck, Nd (BIS)</option>
+                <option value=BMI>Bloomington, Il (BMI)</option>
+                <option value=BOI>Boise, Id (BOI)</option>
+                <option value=BOS>Boston, Ma (BOS)</option>
+                <option value=BRO>Brownsville, Tx (BRO)</option>
+                <option value=BQK>Brunswick, Ga (BQK)</option>
+                <option value=BUF>Buffalo, Ny (BUF)</option>
+                <option value=BUR>Burbank, Ca (BUR)</option>
+                <option value=BTV>Burlington, Vt (BTV)</option>
+                <option value=CID>Cedar Rapids, Ia (CID)</option>
+                <option value=CWA>Central Wisc, Wi (CWA)</option>
+                <option value=CHS>Charleston, Sc (CHS)</option>
+                <option value=CRW>Charleston, Wv (CRW)</option>
+                <option value=CLT>Charlotte, Nc (CLT)</option>
+                <option value=CHO>Charlottesville, Va (CHO)</option>
+                <option value=CHA>Chattanooga, Tn (CHA)</option>
+                <option value=MDW>Chicago (Midway), Il (MDW)</option>
+                <option value=ORD>Chicago (O'Hare), Il (ORD)</option>
+                <option value=CVG>Cincinnati, Oh (CVG)</option>
+                <option value=CLE>Cleveland, Oh (CLE)</option>
+                <option value=CLL>College Station, Tx (CLL)</option>
+                <option value=COS>Colorado Springs, Co (COS)</option>
+                <option value=COU>Columbia, Mo (COU)</option>
+                <option value=CAE>Columbia, Sc (CAE)</option>
+                <option value=CMH>Columbus, Oh (CMH)</option>
+                <option value=CDV>Cordova, Ak (CDV)</option>
+                <option value=CRP>Corpus Christi, Tx (CRP)</option>
+                <option value=DAL>Dallas (Love Field), Tx (DAL)</option>
+                <option value=DFW>Dallas/Fort Worth, Tx (DFW)</option>
+                <option value=DAY>Dayton, Oh (DAY)</option>
+                <option value=DEN>Denver, Co (DEN)</option>
+                <option value=DSM>Des Moines, Ia (DSM)</option>
+                <option value=DTW>Detroit, Mi (DTW)</option>
+                <option value=DLH>Duluth, Mn (DLH)</option>
+                <option value=DRO>Durango, Co (DRO)</option>
+                <option value=CID>Eastern Iowa, Ia (CID)</option>
+                <option value=ELP>El Paso, Tx (ELP)</option>
+                <option value=ERI>Erie, Pa (ERI)</option>
+                <option value=EUG>Eugene, Or (EUG)</option>
+                <option value=EKA>Eureka, Ca (EKA)</option>
+                <option value=FAI>Fairbanks, Ak (FAI)</option>
+                <option value=FAR>Fargo, Nd (FAR)</option>
+                <option value=FNT>Flint, Mi (FNT)</option>
+                <option value=FAT>Fresno, Ca (FAT)</option>
+                <option value=FLL>Ft. Lauderdale, Fl (FLL)</option>
+                <option value=RSW>Ft. Myers, Fl (RSW)</option>
+                <option value=VPS>Ft. Walton/Okaloosa, Fl (VPS)</option>
+                <option value=FWA>Ft. Wayne, In (FWA)</option>
+                <option value=GNV>Gainesville, Fl (GNV)</option>
+                <option value=GFK>Grand Forks, Nd (GFK)</option>
+                <option value=GRR>Grand Rapids, Mi (GRR)</option>
+                <option value=GTF>Great Falls, Mt (GTF)</option>
+                <option value=GRB>Green Bay, Wi (GRB)</option>
+                <option value=GSO>Greensboro, Nc (GSO)</option>
+                <option value=GSP>Greenville, Sc (GSP)</option>
+                <option value=GPT>Gulfport, Ms (GPT)</option>
+                <option value=HRL>Harlingen (HRL)</option>
+                <option value=MDT>Harrisburg, Pa (MDT)</option>
+                <option value=BDL>Hartford, Ct (BDL)</option>
+                <option value=HLN>Helena, Mt (HLN)</option>
+                <option value=ITO>Hilo, Hi (ITO)</option>
+                <option value=HHH>Hilton Head, Sc (HHH)</option>
+                <option value=HNL>Honolulu, Hi (HNL)</option>
+                <option value=IAH>Houston Bush, Tx (IAH)</option>
+                <option value=HOU>Houston Hobby, Tx (HOU)</option>
+                <option value=HTS>Huntington, Wv (HTS)</option>
+                <option value=HSV>Huntsville Intl, Al (HSV)</option>
+                <option value=IDA>Idaho Falls, Id (IDA)</option>
+                <option value=IND>Indianapolis, In (IND)</option>
+                <option value=ISP>Islip, Ny (ISP)</option>
+                <option value=ITH>Ithaca, Ny (ITH)</option>
+                <option value=JAC>Jackson Hole, Wy (JAC)</option>
+                <option value=JAN>Jackson Int'L, Ms (JAN)</option>
+                <option value=JAX>Jacksonville, Fl (JAX)</option>
+                <option value=JNU>Juneau, Ak (JNU)</option>
+                <option value=OGG>Kahului, Hi (OGG)</option>
+                <option value=MCI>Kansas City, Mo (MCI)</option>
+                <option value=JHM>Kapalua, Hi (JHM)</option>
+                <option value=JHM>Kapalua, Hi (JHM)</option>
+                <option value=LIH>Kauai, Hi (LIH)</option>
+                <option value=EYW>Key West, Fl (EYW)</option>
+                <option value=TYS>Knoxville, Tn (TYS)</option>
+                <option value=KOA>Kona, Hi (KOA)</option>
+                <option value=LNY>Lanai, Hi (LNY)</option>
+                <option value=LAN>Lansing, Mi (LAN)</option>
+                <option value=LAS>Las Vegas, Nv (LAS)</option>
+                <option value=LEX>Lexington, Ky (LEX)</option>
+                <option value=LNK>Lincoln, Ne (LNK)</option>
+                <option value=LIT>Little Rock, Ar (LIT)</option>
+                <option value=LGB>Long Beach, Ca (LGB)</option>
+                <option value=LAX>Los Angeles, Ca (LAX)</option>
+                <option value=SDF>Louisville, Ky (SDF)</option>
+                <option value=LBB>Lubbock, Tx (LBB)</option>
+                <option value=LYH>Lynchburg, Va (LYH)</option>
+                <option value=MSN>Madison, Wi (MSN)</option>
+                <option value=MHT>Manchester, Nh (MHT)</option>
+                <option value=OGG>Maui, Hi (OGG)</option>
+                <option value=MFE>Mcallen, Tx (MFE)</option>
+                <option value=MFR>Medford, Or (MFR)</option>
+                <option value=MLB>Melbourne, Fl (MLB)</option>
+                <option value=MEM>Memphis, Tn (MEM)</option>
+                <option value=MIA>Miami, Fl (MIA)</option>
+                <option value=MAF>Midland/Odessa, Tx (MAF)</option>
+                <option value=MKE>Milwaukee, Wi (MKE)</option>
+                <option value=MSP>Minneapolis/St. Paul, Mn (MSP)</option>
+                <option value=MSO>Missoula, Mt (MSO)</option>
+                <option value=MOB>Mobile Regional, Al (MOB)</option>
+                <option value=MKK>Molokai, Hi (MKK)</option>
+                <option value=MRY>Monterey, Ca (MRY)</option>
+                <option value=MGM>Montgomery, Al (MGM)</option>
+                <option value=MYR>Myrtle Beach, Sc (MYR)</option>
+                <option value=APF>Naples, Fl (APF)</option>
+                <option value=BNA>Nashville, Tn (BNA)</option>
+                <option value=BAZ>New Braunfels, Tx (BAZ)</option>
+                <option value=MSY>New Orleans, La (MSY)</option>
+                <option value=NYC>New York (All Airports), Ny (NYC)</option>
+                <option value=JFK>New York (Kennedy), Ny (JFK)</option>
+                <option value=LGA>New York (Laguardia), Ny (LGA)</option>
+                <option value=EWR>Newark, Nj (EWR)</option>
+                <option value=ORF>Norfolk, Va (ORF)</option>
+                <option value=OAK>Oakland, Ca (OAK)</option>
+                <option value=OKC>Oklahoma City, Ok (OKC)</option>
+                <option value=OMA>Omaha, Ne (OMA)</option>
+                <option value=ONT>Ontario, Ca (ONT)</option>
+                <option value=SNA>Orange County, Ca (SNA)</option>
+                <option value=MCO>Orlando, Fl (MCO)</option>
+                <option value=PSP>Palm Springs, Ca (PSP)</option>
+                <option value=PFN>Panama City, Fl (PFN)</option>
+                <option value=PNS>Pensacola, Fl (PNS)</option>
+                <option value=PIA>Peoria, Il (PIA)</option>
+                <option value=PHL>Philadelphia, Pa (PHL)</option>
+                <option value=PHX>Phoenix, Az (PHX)</option>
+                <option value=PIT>Pittsburgh, Pa (PIT)</option>
+                <option value=CLM>Port Angeles, Wa (CLM)</option>
+                <option value=PDX>Portland Intl, Or (PDX)</option>
+                <option value=PWM>Portland, Me (PWM)</option>
+                <option value=PVD>Providence, Ri (PVD)</option>
+                <option value=RDU>Raleigh/Durham, Nc (RDU)</option>
+                <option value=RAP>Rapid City, Sd (RAP)</option>
+                <option value=RDM>Redmond, Or (RDM)</option>
+                <option value=RNO>Reno, Nv (RNO)</option>
+                <option value=RIC>Richmond, Va (RIC)</option>
+                <option value=ROA>Roanoke, Va (ROA)</option>
+                <option value=ROC>Rochester, Ny (ROC)</option>
+                <option value=RFD>Rockford, Il (RFD)</option>
+                <option value=SMF>Sacramento, Ca (SMF)</option>
+                <option value=MBS>Saginaw, Mi (MBS)</option>
+                <option value=SLE>Salem, Or (SLE)</option>
+                <option value=SLC>Salt Lake City, Ut (SLC)</option>
+                <option value=SAT>San Antonio, Tx (SAT)</option>
+                <option value=SAN>San Diego, Ca (SAN)</option>
+                <option value=SFO>San Francisco, Ca (SFO)</option>
+                <option value=SJC>San Jose, Ca (SJC)</option>
+                <option value=SBA>Santa Barbara, Ca (SBA)</option>
+                <option value=STS>Santa Rosa, Ca (STS)</option>
+                <option value=SRQ>Sarasota/Bradenton, Fl (SRQ)</option>
+                <option value=SAV>Savannah, Ga (SAV)</option>
+                <option value=SEA>Seattle/Tacoma, Wa (SEA)</option>
+                <option value=SHV>Shreveport, La (SHV)</option>
+                <option value=SUX>Sioux City, Ia (SUX)</option>
+                <option value=FSD>Sioux Falls, Sd (FSD)</option>
+                <option value=GEG>Spokane, Wa (GEG)</option>
+                <option value=SPI>Springfield, Il (SPI)</option>
+                <option value=SGF>Springfield, Mo (SGF)</option>
+                <option value=STL>St. Louis, Mo (STL)</option>
+                <option value=PIE>St. Petersburg, Fl (PIE)</option>
+                <option value=SDY>Sydney Richland Apt (SDY)</option>
+                <option value=SYR>Syracuse, Ny (SYR)</option>
+                <option value=STX>St. Croix, Us Virgin Islands (STX)</option>
+                <option value=STT>St. Thomas, Virgin Islands (STT)</option>
+                <option value=TLH>Tallahassee, Fl (TLH)</option>
+                <option value=TPA>Tampa, Fl (TPA)</option>
+                <option value=TVC>Traverse City, Mi (TVC)</option>
+                <option value=TUS>Tucson, Az (TUS)</option>
+                <option value=TUL>Tulsa, Ok (TUL)</option>
+                <option value=DCA>Washington Natl, Dc (DCA)</option>
+                <option value=IAD>Washington/Dulles, Dc (IAD)</option>
+                <option value=EAT>Wenatchee, Wa (EAT)</option>
+                <option value=PBI>West Palm Beach, Fl (PBI)</option>
+                <option value=HPN>White Plains, Ny (HPN)</option>
+                <option value=ICT>Wichita, Ks (ICT)</option>
+                <option value=AVP>Wilkes-Barre/Scranton, Pa (AVP)</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="wrapper-child-adult">
+          <div class="dropdown__field">
+            <div class="field-icon">
+              <i class="fas fa-male"></i>
+            </div>
+            <div class="selectdiv">
+              <label>
+                <select name="adults" id="adult">
+                  <option selected>Adults</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="dropdown__field">
+            <div class="field-icon">
+              <i class="fas fa-child"></i>
+            </div>
+            <div class="selectdiv">
+              <label>
+                <select name="child" id="child">
+                  <option selected>Child</option>
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown__field">
+          <div class="field-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="datepicker-check-in-out">
+            <span id="check-in-out">
+            </span>
+          </div>
+          <input type="hidden" name="aDate" id="checkin-hidden">
+          <input type="hidden" name="dDate" id="checkout-hidden">
+        </div>
+        <button type="button" class="post" id="btnSubmit" onClick="document.newdates.submit()">
+          <h2 class="post-title">Check Availability</h2>
+        </button>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/litepicker-polyfills-ie11/dist/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
